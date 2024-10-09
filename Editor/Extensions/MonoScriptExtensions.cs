@@ -89,13 +89,13 @@
         /// </returns>
         [PublicAPI, NotNull] public static string GetAssemblyName(this MonoScript script)
         {
-		    string assemblyName = script.Internal_GetAssemblyName();
+	    string assemblyName = script.Internal_GetAssemblyName();
             int lastDotIndex = assemblyName.LastIndexOf('.');
-		    if(assemblyName == null || assemblyName == string.Empty)
-		    {
-				return string.Empty;
-		    }
-		    return lastDotIndex == -1 ? assemblyName : assemblyName.Substring(0, lastDotIndex);
+	    if(assemblyName == null || assemblyName == string.Empty)
+	    {
+		return string.Empty;
+	    }
+	    return lastDotIndex == -1 ? assemblyName : assemblyName.Substring(0, lastDotIndex);
         }
 
         private static string GetNamespaceName(this MonoScript asset)
